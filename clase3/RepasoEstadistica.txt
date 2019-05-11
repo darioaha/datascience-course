@@ -1,0 +1,18 @@
+Repaso Estadística Descriptiva
+
+Rango=maximo - minimo
+Varianza=Como se dispersan los valores respecto a la media
+Coef Variacion
+etc
+
+___Robustez___
+Hay medidas mas robustas que otras
+Robusta: no cambian mucho respecto a las variaciones
+
+___Distribuciones Asimétricas___
+Revisar si la asimetria analizando donde esta la Media Mediana y Moda
+- Asimetria derecha Moda<Median<Mean
+- Asimetria izquierda Mean<Median<Moda
+
+Covarianza
+Correlacion
