@@ -16,3 +16,6 @@ docker start notebooks
 docker cp clase1 notebooks:/home/DS-DH
 docker cp clase2 notebooks:/home/DS-DH
 
+### [PODCAST]
+https://dataskeptic.com/
+http://lineardigressions.com/
