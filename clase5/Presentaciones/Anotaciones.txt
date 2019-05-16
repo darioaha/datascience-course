@@ -1,0 +1,72 @@
+Notas
+
+Variables Aleatorias
+Variable aleatoria discreta
+    Un experimento va a parar sobre valores finitos o infinitos numerables
+    
+Distribucion de Probabilidad
+    Se escribe P(X=xi) >=0 y la sumatoria P(X=xi) = 1
+
+Funcion de Distribucion (Acumulada)
+    Sumatoria de todos los menores Fx(x) = Px(X<=x)
+
+Variabl aleatoria continua
+    Es igual a la de antes pero continua
+    "Funcion de Densidad"
+
+Distintos eventos tienen distintas formas de varialbes aleatorias
+Cada distribucion tiene un parametro que define como se comporta esa variablae aleatoria
+
+Distribucion Uniforme
+    Cualquier valor dentro de el intervalo definido tiene la misma posibilidad de salir
+    X~unif[x1....xn]
+    
+Bernoulli
+    Para cada expermiento define si fue un exito o un fracaso
+    Define una probabilidad de exito
+    
+    Para generar valores aleatorios de bernoulli
+        from scipy.stats import bernoulli
+        r=bernoulli.rvs(p=0,7,size=1000)
+        
+        
+Distribucion Binomial
+    Mido el exito en una secuencia de n ensayos
+    
+Poisson
+    Definido un periodo de tiempo (o espacio) probabilidad de que ocurran k eventos
+    
+Variables aleatorias continuas
+    La probabilidad de que X=x (un punto) es igual a cero (es una funcion de area)
+    
+    Probabilidad Acumulada
+        Area entre dos valores
+    
+                            h*(b-a) = 1 La probabilidad del area entre b y a debe dar 1
+         _______  h   
+        |       |
+        |       |
+    ----a-------b-----------
+         -(b-a)-
+         
+Distribucion Exponencial
+    Cuanto tiempo sucede entre cada evento en un proceso de Poisson (ver lambda)
+    
+Distribucion Normal
+    Media y Varianza - Campana Gaussiana
+    
+Distribuicion ji-cuadrado (Se utiliza para calcular errores)
+    z = normal aleatoria estandar
+    Se suele usar para calcular errores: Como se distribuyen los datos respecto de la normal
+    
+Distribucion t (No se usa casi nunca)
+    T = Z/raiz(V/n)
+    Se utiliza con pocos datos que tienden a una normal
+
+Distribucion f (No se usa nunca)
+        Define dos variables U1 y U2
+    
+        
+        
+        
+    
