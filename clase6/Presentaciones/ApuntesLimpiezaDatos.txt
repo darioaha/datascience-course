@@ -1,0 +1,48 @@
+
+=================
+Limpieza de datos
+=================
+
+Todo lo que vamos a ahcer de limpieza lo vamos a hacer con Pandas
+    Asignar tipos y formatos correctos
+        - Las fechas suelen ser un problema comun
+    Estandarizar categorias
+    Corregir valores erroneos
+    Datos faltantes
+        - Puede suceder que no correspondan las preguntas o que falten simplemente
+        - El primer tendría sentido que falten
+        - Gente que no quiso contestar algo, por ej, puede ser informacion tmb
+    Tidy Data
+
+
+Representacion datos faltantes
+-None
+-NaN
+-NaT
+
+Valores Faltantes
+    - Entender el problema y poner datos que tengan sentidos
+    - buscar si en otros registros hay datos para reemplazarlos
+
+->Si son pocos y al azar (azar con respecto a otras categorias o columnas) -> TIRARLOS
+-> Imputacion por media
+-> Imputacion hot deck -> es copiar un valor hacia adelante y hacia atras, de los datos ordenados segun algun criterio
+        Muy comun en series ordenadas temporalmente
+-> Por regresion de alguna variable
+
+
+Pandas
+
+    -fillna
+    - tidy data
+    https://www.displayr.com/numerate-data-the-bigger-stronger-and-faster-offspring-of-tidy-data/
+    
+    -apply
+        Agarra un dataframe y le aplica una funcioin
+        df.apply(mi_funcion, axis=1) -> cada un de los valores de la fila
+
+    -melt
+        para transformar en tidy
+
+    
+    
