@@ -1,0 +1,12 @@
+
+
+Pandas
+
+GroupBy
+    - split
+    - apply
+    - combine
+
+pivot_table()
+
+    
