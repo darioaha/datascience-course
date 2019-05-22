@@ -1,0 +1,30 @@
+
+En la visualizacion de datos la posicion y el color son los recursos mas importantes
+
+colores frios o calidos
+        intensos o menos intensos
+        ejemplo intensidad y color calido para numeros mayores al contrario para numeros menores
+        
+    Semantica para el que mira el gráfico entienda de una
+    Utilizar colores muy distintos
+
+
+Tambien se puede intensificar hacia negativos ypositivos con distintos colores, y dejar el cero en blanco u otro color
+
+Tipos de graficos
+- Histogramas -> con que frecuencia pasa cada cosa
+- Diagrama de Caja -> ver 1.5xdistancia intercuartil
+- Grafico de dispersion
+- Grafico de lineas
+- Barras
+- Barras apiladas
+- Tortas
+
+Libreria Matplotlib
+- Es una libreria para graficar de bajo nivel
+
+Pandas plot
+
+Seaborn
+- Es de alto nivel y usa matplotlib de base
+

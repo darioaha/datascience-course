@@ -1,0 +1,8 @@
+savefig
+    guarda en el directorio el archivo con el nombre que se indica
+    Ejemplo:
+        plt.savefig('grafico')
+        
+plt.legend(loc='best')
+    Mejorlugar para la referencia
+    
