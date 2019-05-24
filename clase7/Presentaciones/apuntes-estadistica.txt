@@ -1,0 +1,53 @@
+Poblacion vs Muestra
+
+
+Estrato- Subconjunto de la poblacion con alguna caracteristica en comun
+
+Muestras no Probabilisticas
+    Lo que hacen es elegir de algun modo algo
+    
+
+===================
+Parametros, Estimaciones y Estimadores
+
+Parametros son las caracteristicas que definen a las poblaciones
+
+- El objetivo siempres es ESTIMAR algo de una poblacion,
+    eso que queremos estimar es el parametro de la poblacion
+    
+    
+- Estimacion Puntual
+    aplicar el estadistico (funcion) para calcular un parametro desconocido
+    
+- La distribucion de la media cuanto tengo muchos casos tiene una varianza menor
+
+===================
+Ley de grandes numeros - Teorema Central del Limite
+
+Cuando mas casos tenemos y el promedio tiende a ser la media poblacional.
+
+Ver formula de Error Estandar
+===================
+
+Mean
+Variance
+Standard Deviation
+Proportion
+
+- SI la estimacion es puntual, el valor del estadistico no sabemos mucho si nos sirve o no
+
+- Intervalo de confianza
+    por ejemplo probabilidad de un 90% normalizando Z
+    Acumulado de 95 - acumulado de 5
+    - alfa-> es el nivel de significancia -> es lo contrario al intervalo de confianza
+    
+
+Valor en un punto
+st.t.ppf(0.975, n-1)
+
+Acumulada hasta un punto
+st.t.cdf(st.t.ppf(0.975, n-1), n-1)
+
+
+
+
