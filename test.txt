@@ -1,0 +1,24 @@
+# 2
+# Relacion entre cantidad de metros cubiertos y no cubiertos
+#len(df.geonames_id.unique())
+
+description_array = df.description.str.lower()
+type(description_array)
+#description_array
+#string = "4 ambientes"
+
+pattern_amb = re.compile("(.*) amb")
+
+#result
+
+aux = p.Series()
+
+   
+for idx,desc in description_array.iteritems():
+    
+    if (desc)
+    result = pattern_amb.search(string)
+    result.group(1)
+    aux = x.set_value(idx, desc)
+    
+
