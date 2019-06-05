@@ -1,0 +1,13 @@
+
+#Como instalar geopandas en docker
+https://www.docker-files.com/?ft=docker_files&qt=default&qp=&page=122
+FROM ubuntu:bionic
+apt-get update
+apt-get install -y python3-geopandas
+
+#En las maquinas de dh
+#ingreso al container
+sudo su
+apt-get update
+apt-get install -y python3-geopandas
+
