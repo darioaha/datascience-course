@@ -1,0 +1,91 @@
+#Rellenar con el promedio la superficie total, agrupando por el promedio del barrio (posible peso 39.328)
+#https://gitlab.com/dsdh/properatti/issues/4
+
+#Reemplazo los casos donde la superficie cubierta es 0 por nan
+mask_surface_cov0 = (df.surface_covered_in_m2 == 0)
+df.surface_covered_in_m2[mask_surface_cov0] = np.nan
+
+#Reemplazo los casos donde la superficie total es 0 por nan
+mask_surface_tot0 = (df.surface_total_in_m2 == 0)
+df.surface_total_in_m2[mask_surface_tot0] = np.nan
+
+###################################################################
+# creamos una proporción de metros cubiertos sobre metros totales
+propcubierto = df.surface_covered_in_m2 / df.surface_total_in_m2
+
+# obteno proporciones validas (si es mayor a 1 no es una proporcion)
+mask_propcubierto_validas = propcubierto < 1
+propcubierto_clean  = propcubierto[mask_propcubierto_validas]
+
+#Agrego la columna propcubierto al dataframe principal
+df.propcubierto=propcubierto_clean
+
+#agrupamos por provincia(state_name) el porcentaje promedio de propcubierto (m2cubierto/m2total)
+avg_propcubiertobarrio = df.groupby('state_name')["propcubierto"].mean().sort_values(ascending = False)
+print(avg_propcubiertobarrio)
+
+#antes de hacer el reemplazo, evaluamos si los datos que tenemos para aplicar el promedio cumple con un mínimo
+#que lo haga fiable. Establecemos dos exigencias
+# UNO - Que haya mas de 30 datos para obtener la proporción 
+# DOS - Que la proporcion de datos disponibles sea mayor al 25%
+
+#cantidad de datos para calcular la proporcion 
+avg_propcubiertobarriocount = df.groupby('state_name')["propcubierto"].count().sort_values(ascending = False)
+
+#mascara para obtener los que no tienen mas de 30 registros
+mask_removerporcantidad = avg_propcubiertobarriocount > 30
+
+#cantidad de datos existentes en tabla
+mask_surface_notnull = df.surface_covered_in_m2.notnull()
+df_recup_suf_tot = df[mask_surface_notnull].groupby('state_name')['state_name'].count().sort_values(ascending = False)
+
+#divido los datos existentes sobre los datos totales y obtengo la relación para la regla DOS
+proporcion = avg_propcubiertobarriocount / df_recup_suf_tot
+proporcion.round(2).sort_values(ascending = True)
+
+#condición de la regla 2
+mask_removerporproporcion = proporcion > 0.25
+
+#genero máscara con ambas condiciones
+mask_proporcion = mask_removerporcantidad & mask_removerporproporcion
+propvalidados = avg_propcubiertobarrio[mask_proporcion]
+print ('estos son los que cumplen las dos condiciones y son fiables para el reemplazo', avg_propcubiertobarrio[mask_proporcion])
+
+#iteramos por las propiedades que tienen el dato faltante de superficie total y les inputamos la proporción promedio
+#del barrio al que pertenecen, usando como dato la superficie cubierta.
+# SUPERFICIE TOTAL = (SUPERFICIE CUBIERTA / PROPORCION CUBIERTOTOTAL)
+
+surface_total_in_m2_clean = []
+for index, row in df.iterrows():
+    
+    if pd.isnull(row.surface_total_in_m2):    
+        if(propvalidados.index.contains(row.state_name)):        
+            #surface_total_in_m2_clean.append(row.surface_covered_in_m2 / avg_propcubiertobarrio[row.state_name]) VERSION DE PAULA CORRE
+            surface_total_in_m2_clean.append(row.surface_covered_in_m2 / propvalidados.loc[row.state_name]) #VERSION CON PROPVALIDADOS NO CORRE
+        else:
+            surface_total_in_m2_clean.append(row.surface_total_in_m2)    
+    else:
+        surface_total_in_m2_clean.append(row.surface_total_in_m2)
+df["surface_total_in_m2_nueva"] = surface_total_in_m2_clean
+df["surface_total_in_m2_nueva"]
+
+
+ #dropeamos los casos NaN
+surfacetotalnueva_condatos = df.surface_total_in_m2_nueva.dropna()
+
+
+#y finalmente, los reemplazamos en la columna "surface_total_in_m2_nueva" original del DF
+df.surface_total_in_m2.update(surfacetotalnueva_condatos)
+
+
+#df[['surface_total_in_m2', 'surface_total_in_m2_nueva']]
+
+#verifico si son iguales, donde no coinciden levanta los casos nan unicamente pero en relaidad son iguales
+
+maskcheck = df.surface_total_in_m2 != df.surface_total_in_m2_nueva
+asdasd = df[maskcheck]
+asdasd[['surface_total_in_m2', 'surface_total_in_m2_nueva']]
+
+mask1 = (df.surface_total_in_m2.isnull()) & (df.surface_covered_in_m2.notnull()) 
+dfmaskk1 = df[mask1]
+dfmaskk1[['surface_total_in_m2', 'surface_covered_in_m2','state_name', 'surface_total_in_m2_nueva']].head()
