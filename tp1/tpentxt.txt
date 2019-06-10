@@ -1,0 +1,120 @@
+# borrar columnas innecesarias
+to_drop = [
+            'operation', #todas las operaciones son sell
+            'country_name', # todas son argentina
+            'expenses', # no aporta
+            'properati_url', # no aporta
+            'image_thumbnail' # no aporta
+        ] #listar columnas no utilizadas
+df.drop(columns=to_drop, inplace=True) #aplicar drop
+
+
+
+
+----------------------------------------------------
+
+
+# 10. Obtener la cantidad de ambientes desde la descripcion
+# https://gitlab.com/dsdh/properatti/issues/11
+
+df_description_notnull = df[df.description.notnull()] # obtengo aquellos cuya descripcion es notnull
+print("Cantidad de registros dataset: ",len(df))
+print("Cantidad de registros description not null: ",len(df_description_notnull))
+
+
+description_array = df_description_notnull.description.str.lower()
+pattern_amb = re.compile("(.*) amb")
+
+# TODO: Menos if!!
+def get_ambientes(row):
+    str_amb = pattern_amb.search(row) #busco pattern com ambientes
+    if str_amb: # si existe
+        str_amb = str_amb.group(1) #obtenego el string antes de ambientes
+        result = [int(s) for s in str_amb.split() if s.isdigit()] #split del string y obtengo solo los digitos
+        if result: 
+            return result[-1] #retorno el ultimo digito detras de "# amb"
+
+
+df_description_notnull.description.apply(get_ambientes)
+df_description_notnull
+
+
+
+
+
+----------------------------------------------------
+
+
+
+mask_surfaceprop = (df['surface_total_in_m2'].notnull())& (df['surface_covered_in_m2'].notnull())
+df_st = df[mask_surfaceprop]
+
+grouped_df_st = df_st.groupby(['state_name']) #agrupo por state_name
+grouped_df_st_and_sum = grouped_df_st.agg({"surface_covered_in_m2": "sum","surface_total_in_m2": "sum"}) #agrupo y sumarizo
+
+
+grouped_df_st_and_sum = grouped_df_st_and_sum.rename(columns={'surface_covered_in_m2':'sum_surface_covered_in_m2',
+                          'surface_total_in_m2':'sum_surface_total_in_m2'}) # renombro las columnas
+
+
+def divide_total_covered(row_df_st):
+    row_df_st['proportion'] = row_df_st['surface_total_in_m2'] / row_df_st['surface_covered_in_m2']
+    return row_df_st
+
+grouped_df_st.apply(divide_total_covered)
+
+
+
+
+
+----------------------------------------------------
+
+
+
+
+
+#q1_peso_usd_m2 = np.mean(price_usd_per_m2_arr) + 1*np.std(price_usd_per_m2_arr)
+#q3_peso_usd_m2 = np.mean(price_usd_per_m2_arr) + 3*np.std(price_usd_per_m2_arr)
+
+df_aux = df[df.price_usd_per_m2.notnull()] #elimino los nulos
+q1_usd_m2, q3_usd_m2= np.percentile(df_aux.price_usd_per_m2,[25,75]) # obtengo q1 y q3
+iqr_peso_usd_m2 = q3_usd_m2 - q1_usd_m2 #obtengo iqr
+print("iqr:",iqr_peso_usd_m2)
+print("q1:",q1_usd_m2)
+print("q3:",q3_usd_m2)
+median_price_usd_m2 = df_aux.price_usd_per_m2.median()
+print("median:",median_price_usd_m2)
+
+
+left_bound = median_price_usd_m2 -(1.5 * iqr_peso_usd_m2) 
+right_bound = median_price_usd_m2 +(1.5 * iqr_peso_usd_m2) 
+
+
+#df_aux.price_usd_per_m2[(np.abs(stats.zscore(df_aux.price_usd_per_m2)) < 3).all(axis=1)]
+
+#print(left_bound,right_bound)
+right_outliers = df_aux.price_usd_per_m2[np.abs(df_aux.price_usd_per_m2) > right_bound]
+left_outliers = df_aux.price_usd_per_m2[np.abs(df_aux.price_usd_per_m2) < left_bound]
+#left_outliers
+
+print("Valor Left:",left_bound," Cantidad de outliers:",len(left_outliers))
+print("Valor Right:",right_bound," Cantidad de outliers:",len(right_outliers))
+#print(df_aux.price_usd_per_m2.describe())
+df_aux = df_aux.drop(right_outliers.index)
+
+
+right_outliers
+#df_aux.iloc[57]
+
+n, bins, patches = plt.hist(x=df_aux.price_usd_per_m2, bins='auto', color='#0504aa',
+                            alpha=0.7, rwidth=0.85)
+plt.grid(axis='y', alpha=0.75)
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.title('My Very Own Histogram')
+plt.text(23, 45, r'$\mu=15, b=3$')
+maxfreq = n.max()
+# Set a clean upper y-axis limit.
+plt.ylim(ymax=np.ceil(maxfreq / 10) * 10 if maxfreq % 10 else maxfreq + 10)
+
+
