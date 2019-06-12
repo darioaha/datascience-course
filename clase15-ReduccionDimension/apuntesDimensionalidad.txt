@@ -1,0 +1,39 @@
+
+Se quiere reducir dimensionalidad sin perder la varianza de los datos
+La varianza depende de las relaciones de las variables
+
+Un modelo entrenado con menos variables es mejor que un modelo entrenado con muchas variables
+
+
+Metodo PCA
+1- Hay que buscar, agarrar todas las variables y convertirlas a una escala para que tengan media 0 y varianza 1, asi pueden compararse
+1.1 Para ello utilizar StandarScaler()
+
+2- Para calcular la covarianza se utiliza np.cov
+
+La matriz de correlacion: es varianza/desvio de cada variable
+
+3 - Inventar un nuveo sistema de coordenadas
+Para ello usamos la matriz de covarianzas normalizada o la de correlaciones
+La idea es que el autovalor tiene una relacion directa con la que tiene varianza mas grande
+
+
+
+La varianza total es la suma de todos los autovalores = 
+____________________
+tot = sum(eig_vals)
+var_exp = [(i / tot)*100 for i in sorted(eig_vals, reverse=True)]
+print(tot)
+print(var_exp)
+____________________
+
+
+=======================================================================
+sklearn resuelve esto enunsolo algoritmo
+
+from sklearn.decomposition import PCA 
+sklearn_pca = PCA(n_components=2)
+Y_sklearn = sklearn_pca.fit_transform(df_std)
+print(Y_sklearn)
+
+para conocer n_components 

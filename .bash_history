@@ -12,3 +12,5 @@ exit
 conda install feather
 conda install -c conda-forge feather-format
 exit
+conda install -c conda-forge feather-format
+exit
