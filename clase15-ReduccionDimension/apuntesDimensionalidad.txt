@@ -37,3 +37,18 @@ Y_sklearn = sklearn_pca.fit_transform(df_std)
 print(Y_sklearn)
 
 para conocer n_components 
+
+-------------------------------------2da Parte-----------------------------------
+
+T-SNE
+utilizo distancia euclidea
+matriz de nxn devalores de probabilidad
+
+ISOMAPS
+agarra todos los puntos y construye un grafo de distancias. Se define cuantos vecinos voy a mirar
+Para cada uno de los vecinos calcula la distancia
+Distancia geodesima: distancia de un punto a otro, saltando por los puntos adyacentes
+   ->Caminointos entre puntos
+
+
+

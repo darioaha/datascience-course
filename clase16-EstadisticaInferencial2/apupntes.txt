@@ -1,0 +1,11 @@
+
+Testde Hipotesis
+
+Teorema Central Limite
+Si el muestreo es aleatorio y las observaciones independientes.
+
+Hipotesis nula: siempre voy a basarme en h0 para rechazar o no
+
+Error de confianza y significacncia
+Error tipo 1 y 2
+
