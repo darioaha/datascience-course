@@ -16,3 +16,5 @@ conda install -c conda-forge feather-format
 exit
 conda install -c conda-forge geocoder
 exit
+conda install -c conda-forge geocoder
+exit
