@@ -18,5 +18,8 @@ conda install -c conda-forge geocoder
 exit
 conda install -c conda-forge geocoder
 exit
+<<<<<<< HEAD
 conda install df_pca
 exit
+=======
+>>>>>>> a50fb6dbe3bb5d1e29c712e6f00606c6af8270b1
