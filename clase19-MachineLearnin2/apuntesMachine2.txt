@@ -1,0 +1,27 @@
+Hiperparametros y Model Validation
+
+hiperparametros: nos limitan en un modelo posible lo que yo voy a querer entrenar
+
+
+---- supervisado y no supervisado
+en el supervisado se le dan las categorias
+en el no supervisado no
+
+Receta Basica
+1- elegir una clas de modelo que indica como lo voy a modelar
+	cluster, regresion
+	Cada familia de algoritmos tiene hiperparametros, los hiperparametros me acotan el modelo
+2- Elegir hiperparametros del modelo
+	Por ejemplo en una regresion lineal elegir el B0
+		otro por ejemplo puede ser especificar el grado del polinomio
+3- Ajustar con datos de entrenamiento
+4- Usar el modelo para predecir etiquetas para nuevos datos
+
+"El objetivo es llegar a un modelo que pueda generalizar"
+
+
+----- Dilema entre sesgo y varianza
+
+Los modelos con sobreajuste se dice que son de alta varianza
+
+Ver grafico de sesgo vs varianza
