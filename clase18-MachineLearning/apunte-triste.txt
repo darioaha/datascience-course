@@ -1,0 +1,38 @@
+
+
+Hiperparametros
+Parametros de como vamos a construir el modelo
+
+Sklear es la libreria que se utiliza de aca en adelante
+
+
+los parametros
+
+dummy -> siempre pone una categoria menos de las que tengo
+    lo que hace es transformar una columna en 2 columnas (n-1)
+    representa cada una con 1s y 0s los que tienen dos ceros corresponden a la categoria eliminada
+    
+En el  ejemplo practica 1 utiliza bayes para ajustar
+
+
+
+Fit  y Transform
+
+sklearn -> hace una que se llama fit_transform
+
+transformacion -> aplica fit a la variable nueva
+calcular autovecotres de la matriz de covarianzas
+
+
+En el ejercicio 0_REPASO_PSA -> PCA
+Cuando le dije transoforma, me lo transormo a 10 variables porque nunca le dije
+Pero si lo graficara utilizaria solamente las primeras 2
+
+
+-----Clustering-----
+Se pasa un modelo
+fitea
+predice los datos con el ajuste
+
+El cluster lo que va a hacer es devolver para cada instancia una etiqueta (ejemplo en ejercicio de iris, el clustering es por color)
+Agrupa por centroides

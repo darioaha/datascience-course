@@ -1,0 +1,59 @@
+http://www.aprendemachinelearning.com/comprende-principal-component-analysis/
+
+______MAS APUNTES
+
+- Feature Selection
+Seleccionar el subconjunto de variables que mas contribuyen a mi problema
+
+- Feature extraction (Tecnica Utilizada)
+Transformar los datos para minimizar la perdida de informacion
+
+______COVARIANZA Y CORRELACION
+
+- covarianza
+Dos variables tienen covarianza positiva cuando se encuentran por encima de su media al mismo tiempo
+
+-correlacion
+Es una medida estandarizada dividida por los desvios estandar
+Al coeficiente de correlacion de Pearson se lo puede definir como el grado de relacion lineal entre dos variables cuantitativas
+
+- comparacion correlacion vs covarianza
+A la correlacion no le afecta la escala de medida de las variables. Esto quiere decir que si expresamos por ejemplo la altura en metros de unos individios y en centimetros de otros la correlacion entre ambas variables no varía
+
+- Coeficiente de correlacion de Pearson
+Este indice se encuentra en el intervalo -1 a 1
+
+-- Si r=1 la correlacion es positiva y perfecta, significa que hay dependencia total entra las variables
+-- Si 0 < r < 1 la correlacion es positiva, mientras mas cerca de 1 la relacion es mas lineal y positiva
+-- Si r = 0 No existe relacion lineal entre las variables. No significa que sean independientes!!
+-- Si -1 < r < 0 Hay correlacion negativa. Mientras mas cerca de -1 la relacion es mas lineal negativa
+-- Si -1 < r < 0 Hay correlacion negativa. Mientras mas cerca de -1 la relacion es mas lineal negativa
+-- Si r=-1 correlacion negativa y perfecta. Indica dependencia total y es una relacion inversa
+
+
+_____  PCA para Reducción de dimensiones
+Principal Component Analysis: Se combinan las entradas de una manera especifica y se pueden eliminar las variables menos importantes.
+Luego de aplicar PCA, conseguiremos que todas las nuevas variables sean independientes unas de otras
+
+---------------------------------------------------Algoritmo--------------------------------------------------------------
+Lo que hace el algoritmo es:
+-- Normalizar datos de entrada
+-- Obtener autovectores y autovalores de la matriz de covarianza
+-- Ordenar los autovalores de mayor a menor y elegir los k autovectores que se correspondan con los k mayores
+-- Contruir una matriz de proyeccion W con los k autovectores seleccionados
+-- Transformamosdataset original <<X estandarizado>> via W, para obtener las caracteristicas k-dimensionales
+----------------------------------------------TODO ESTO LO HACE SCIKIT-LEARN----------------------------------------------
+
+Seleccion de componentes principales:
+- Metodo 1: elegir arbitrariamente las primeras n dimensiones. Tomar 2 caracteristicas y usarlas en x e y para graficar por ejemplo
+- Metodo 2: Calcular la proporcion de la variacion explicada de cada caracteristica e ir tomando  dimensiones hasta alcanzar por ejemplo el 85 de la variabilidad total
+- Metodo 3: Crear un screen plot a partir del metodo 2 y seleccionar cuantas dimensiones tomaremos por el metodo del codo, donde identificamos el punto donde se produce una caida significativa en la variacion explicada
+
+
+______ Por que funciona PCA
+Los autovectores representan direccion
+Los autovalores representan magnitud
+A mayores autovalores se correlacionan direcciones mas importantes
+- A mas variabilidad en una direccion en particular, se correlaciona con explicar mejor el comportamiento de una variable dependiente
+-  Mucha variabilidad  usualmente indica Informacion, poca indica Ruido
+
