@@ -25,3 +25,20 @@ Receta Basica
 Los modelos con sobreajuste se dice que son de alta varianza
 
 Ver grafico de sesgo vs varianza
+
+
+
+--------------------------------------------------------------
+Como se crean variables adicionales?
+
+Feature Engineering
+
+vec = DictVectorizer(sparse = False, dtype = int)
+
+matriz sparse=false --> tiene muchos valores con 0 y solo algunos valores con numeros distintosd e cero
+    En general para sistemas de recomendacion se utiliza esto
+    Tambien por ejemplo de datos de redes sociales
+    
+Texto
+Variables inventadas a partir de texto
+Pesa lo que es raro

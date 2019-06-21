@@ -1,0 +1,21 @@
+
+1) elegir modelo
+2) Fit: calcular param del modelo
+3) Predict: calcula los predichos usando los features usando el modelo fiteado
+
+----- libreria stats model
+
+El f es una generalizacion del t
+
+scikit learn y statsmodel hacen exactamente lo mismo, pero segun investigue scikitlearn tiene mas documentacion y se utiliza mas
+
+efectos aditivos:
+    sinergia?? entre dos variables
+
+--- Regresiones para variables categoricas pero se tiene que pasar a numericas
+
+Variables dummies: se utilizan para pasar a numericas
+
+Pipeline
+    Define un conjunto de pasos (array de funciones) donde se le indican todos los pasos que hay que seguir en cada paso del pipeline
+
