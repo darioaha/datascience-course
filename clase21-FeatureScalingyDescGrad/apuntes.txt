@@ -1,0 +1,24 @@
+Supuestos de Gauss
+
+Colinealidad
+    v> = a . w> + o
+    
+    la colinealidad indica que una variable x1 sea combinacion lineal de otra x2
+    
+Valor eesperado de error 0
+    Es importante
+    
+Homocesdasticidad
+    Misma varianza
+
+No existe autocorrelacion entre los errores de dos observaciones diferentes condicionadas a X
+    Si tenemos una variable que es periodica (es decir que tiene un valor en algun  punto)
+    No hay periodicicidad en las mediciones de los errores de una variable
+
+
+-----Descenso de Gradientes-----
+
+estimador de mínimos cuadrados ordinarios:  es de orden 3 resolver este problema
+POr eso se utiliza el algoritmo descenso gradiente
+
+Es importante elegir el hiperparametro del paso (salto) para pasarle al algoritmo de forma de poder encontrar el minimo
