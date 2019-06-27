@@ -1,0 +1,35 @@
+Regularizacion Ridge
+
+penalizar los coeficientes grandes
+	porque tienen colinealidad
+
+MCO -> cuadrados minimos
+Achicar valor de RSS
+
+Encontrar un lambda (que es un hiperparametro)
+	Esto se hace a traves de cross-validation
+	A mayor lambda mas penaliza los coeficientes de los hiperparametros
+
+Para un lambda muy bajito, el sesgo es el mismo que ya tenia el problema
+
+Empiezo con un error determinado para un lambda chiquito, a medida que subo el lambda, pesan mas los coeficientes y baja la varianza.
+Sesgo chico y varianza chica tendremos el minimo del error
+
+Lasso
+	Es otra forma de penalizar donde algunos coeficientes los lleva a 0
+	Es llevar algo al cuadrado o algo al modulo
+	La condicion de lasso pone una region que esta definida sobre algo que tiene bordes, la de ridge no esta sobre algo que tiene bordes
+
+	--HELP--
+	- Norma L1 ->  agarrar cada modulo y sumar
+	- Norma L2 -> sumo al cuadrado y saco raiz de la suma	
+
+
+Elastic Net
+	Tiene algo con el modulo y algo con la norma al cuadrado
+	Busca 2 hiperparametros que ajusten la regresion
+    
+    
+Regla General: Pocos datos y polinomio de grado alto es un indicio de overfit
+
+alpha= ver linspace para pasar un array de valores de lambda. Prueba con todos los alfa indicados
