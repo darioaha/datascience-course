@@ -1,0 +1,13 @@
+
+
+
+Bibliotecas
+
+- Request
+Permitir hacer reuqest a distintos recursos de internet
+
+
+- Beatiful Soup
+Para parsear html y xml
+
+
