@@ -1,0 +1,10 @@
+Flask
+
+Es un servidor web "raro"
+Framework que permite crear aplicaciones web
+No se utiliza en produccion
+
+Picke
+
+Se usa para serializar y deserializar todos los objectos
+
