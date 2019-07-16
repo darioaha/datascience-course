@@ -1,0 +1,45 @@
+---Clasificacion----
+
+Para predecir categorias que no tienen orden, por ejemplo colores, especies, etc
+Se utilizan tecnicas de clasificacion categoricas
+
+Por ejemplo
+- Tipos de emails
+- Si se va a dar de baja o no un cliente
+- Perfiles de consumidor
+- etc
+
+
+------Metodo KNN--------
+--Vecinos mas cercanos--
+Es un algoritmo supervisado
+Conjunto de atributos que son las variables predictoras
+Toma un monton de variables predictoras y de salida tiene un target.
+
+-Parametros
+k: Cuantos vecinos vas a mirar
+
+Se le presentan al algoritmo un monton de datos, donde cada dato tiene una etiqueta
+El que gana va a ser la categoria mayoritaria
+
+-- Metodo
+- Cross-Validation para detectar mejor k
+- Accurancy = TN+TN/Total -->Todo lo que esta bien clasificado dividido el total
+    [Se busca maximizar Accurancy]
+    
+Los numeros de las variables deben ser parecidos en escala. Pero no deben utilizar el mismo tipo de unidad
+    Si no, se debe normalizar
+    
+-- Valor de p
+En general siempre se utiliza p=2 -> distancia euclidiana
+No hay mucha diferencia con p=3 (Manhattan)
+
+-- Valor de k
+Define el problema de sesgo y varianza
+Si son muchos van a tener mucha varianza pero con mayor sesgo
+
+--------------------------------------
+sklearn.neighbors.KNeighborsClassifier
+     El score de este modelo es el accurancy
+
+
