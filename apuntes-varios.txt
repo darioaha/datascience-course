@@ -1,0 +1,21 @@
+
+
+---Busqueda de hiperparametros con Cross-Validation---
+
+La busqueda suele tardar mucho
+Lo conveniente es acotar la cantidad de busquedas
+Luego que sabemos por donde se encuentra nuestro valor, volvemos acotar la busqueda
+Asi sucesivamente hasta encontrar el hiperparametro adecuado
+
+Ejemplo: 
+alfas_ridge = np.linspace(0.003, 3, 300)
+
+En lugar de usar 300 ver si:
+    - acotar la cantidad a 10 busquedas -> alfas_ridge = np.linspace(0.003, 3, 10)
+        - si el valor obtenido es el maximo o el minimo, agrandar rango y volver a buscar
+        - asi hasta encontrar un valor razonable
+        
+--- Utilizar valores random sin semillas---
+    CVL = KFold(n_splits=5, shuffle=True)
+    
+
