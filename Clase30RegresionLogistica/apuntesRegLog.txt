@@ -1,0 +1,78 @@
+-- Regresion logistica --
+
+Algunos motivos
+- Permite definir el resultado como una probabilidad
+- La regresion lineal funciona con supuestos dificiles de cumplir
+- La regresion lineal no tenemos posibilidad de entenderlo como una probabilidad
+- En la regresion lineal depende del resultado de la regresion las categorias que van a dar
+
+ODDS = Probabilidad de si dividido la probabilidad de no
+        P(X)/1-P(X) = e ^B0+B1X
+        
+        log(P(X)/1-P(X)) = B0+B1X
+        
+Se deben normalizar las variables
+
+El estadistico lo que mide es si la hipotesis nula depende o no del balance (esto en el ejemplo de las diapositivas)
+
+--Funcion de costo-- Ejemplo de diapositiva
+Funcion de perdida y funcion de costo, siempre que resolvemos optimizacion queremos minimizar el costo
+Cuando clasifico bien el costo debe ser bajo
+    Si clasifico mal el costo debe ser alto
+
+Los y son los valores posibles que tiene la categoria.
+
+------REGULARIZACION------
+Mismo objetivoque en RegLineal -> reducir el overfitting
+Cuando no queremos regularizacion utilizamos valores de coeficientes muy chiquitos
+
+--- Herramientas
+-El stats.model por default regulariza - Si no le pasamos nada va a regularizar
+-Scikit learn no regulariza
+
+Si la matriz de confusión me da un resultado malo, deberia regularizar
+!!QUIZAS CONVIENE REGULARIZAR SIEMPRE
+
+--- Tabla --- [Stats.model]
+                    Optimization terminated successfully.
+                             Current function value: 0.588205
+                             Iterations 5
+                                             Results: Logit
+                    =================================================================
+                    Model:              Logit            Pseudo R-squared: 0.058     
+                    Dependent Variable: admit            AIC:              364.9233  
+                    Date:               2019-07-14 15:07 BIC:              387.1460  
+                    No. Observations:   300              Log-Likelihood:   -176.46   
+                    Df Model:           5                LL-Null:          -187.30   
+                    Df Residuals:       294              LLR p-value:      0.00060342
+                    Converged:          1.0000           Scale:            1.0000    
+                    No. Iterations:     5.0000                                       
+                    -------------------------------------------------------------------
+                               Coef.    Std.Err.      z      P>|z|     [0.025    0.975]
+                    -------------------------------------------------------------------
+                    const     -0.8291     0.1315   -6.3046   0.0000   -1.0869   -0.5714
+                    x1         0.2004     0.1405    1.4270   0.1536   -0.0749    0.4758
+                    x2         0.2300     0.1401    1.6424   0.1005   -0.0445    0.5045
+                    x3        -0.3004     0.1738   -1.7289   0.0838   -0.6409    0.0401
+                    x4        -0.5123     0.1767   -2.8999   0.0037   -0.8585   -0.1660
+                    x5        -0.5368     0.1763   -3.0448   0.0023   -0.8824   -0.1913
+
+
+- pseudo r square: si da cerca de 1 es bueno sino es malo
+    Cuanto mejor es el modelo que estimar con una constante
+    
+- LLR p-value: 
+    Indica como es de significativo el modelo
+    
+- LL-Null
+    Es el intercepto
+    Si LL-null es mayor que Log-Likelihood, las variables predictoras estan mal (no son explicativas)
+    
+- Coef (Column)
+    
+- Intervalos muy grandes (Columns)
+    Si son muy grandes la variable no esta prediciendo nada-
+    Un ejemplo de intervalo grande es -0.8812 - 0.9999
+
+
+http://www.estadistica.net/ECONOMETRIA/CUALITATIVAS/LOGISTICA/regresion-logistica.pdf
