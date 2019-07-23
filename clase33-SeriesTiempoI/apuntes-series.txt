@@ -1,0 +1,25 @@
+
+
+
+----- Series de Tiempo -----
+
+En el eje x el tiempo, en el eje y la señal (es decir el valor que estamos mirando) 
+
+Estacional -> pasa algo en un intervalo de tiempo y en un periodo se repite
+Patron ciclico -> por ejemplo se repite en todos los primeros semestres
+
+Formula
+    k = cuanto la estoy corriendo en unidades de tiempo
+    
+Forecasting
+    Promedio
+    Naive
+    Seasonal Naive
+    Drift method
+    
+   
+La media movil, se usa para suavizar no para predecir
+
+
+series.rolling(window=window...) -> funcion que permite suavizar
+        
