@@ -1,0 +1,41 @@
+
+
+
+----- Naive Bayes -----
+
+Queremos asignar dada variables predictoras una categoria
+
+P(L|features) = P(features|L) * P(L)/P(feat)
+Probabilidad de que pertenezca a una categoria =
+L = etiqueta (ejemplo adultos y niños)
+
+Bayes es como un piso: si una prediccion da peor que bayes entonces no deberia utilizarse
+Tiene que tener distribucion normal cada predictora.
+Se usa mucho en texto. Las apariciones de una palabra tienen que tener distribucion normal, o multinomial.
+Todas las variables predictoras son independientes. Es decir no tienen correlacion
+La limitacion que tiene es que la probabilidad que calcula no es muy buena
+Pero cuando hay muchos datos
+
+Formas que puede tomar:
+    - Gaussiana
+    - Multivariable
+    
+Inventa una distribuicion de probabilidad en cada conjunto de datos,
+y calcula la probabilidad que pertenezca a una cateogira o a otra.
+
+
+----- Ventajas
+- Son algoritmos muy rapidos
+- Se utilizan en lugares donde hay muchas variables ya que finaliza en un tiempo razonable
+
+
+
+Resumen Semana
+Parametros importantes
+
+- KNN
+    cantidad de vecinos (muy pesado ya que memoriza todos los vecinos)
+- Logistica
+    Media, Varianza, 
+- Naive Bayes
+    Las probabilidades de cada variable
