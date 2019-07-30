@@ -1,0 +1,67 @@
+Repaso
+
+Modelosde clasificación
+    KNN
+        la clase del que esta mas cerca
+    Logistica
+        el resultado es una probabilidad
+    Bayes
+        condicional
+    Arboles
+        No visto en clase
+
+==============================================
+Si tenemos que clasificar algo tenemos que usar todos los modelos que se nos ocurran, y decir cual es mejor.
+
+Cuando clasificamos tenemos categorias posibles:
+    - Verdadero Positivo
+    - Falso Positivo
+    - Falso Negativo
+    - Verdadero Positivo
+    
+***Medida para evaluar la performance, es la MATRIZ DE CONFUSION
+    Nos dice cuantos se clasificaron bien y cuantos mal.
+   
+    
+Test de Hipotesis
+     Nivel de significancia:  hasta cuanto acepto equivocarme
+     
+***Otra Medida para evaluar es ACCURANCY
+    Se busca que este numero sea alto
+    Indica cuantos estan bien
+    
+*** Otra medida es RECALL (Sensibilidad) TPR
+    Se usa para saber cuantos hice bien pero de los positivos
+    Todos los que son positivos realmente
+
+*** Otra mas, SENSITIVY
+    Es el punto de vista contrario a sensibilidad
+    Cuantos hice bien pero de los negativos
+    
+*** Otra mas, PRECISION
+    Es el punto de vista contrario a sensibilidad
+    Los verdaderos positivos sobre todos los que categorice como positivos
+
+
+*** F1
+Se utiliza mucho para text mining
+2*(precicion+recall)/(precicion+recall)
+
+==============================================
+TPR = TP/(TP+FN)
+FPR = 1 - specificity
+
+
+=======================
+CURVA ROC
+
+Grafica que representa que los modelos que se encuentran cercanos al a linea son malos
+Porque dan probabilidades cercanas al 50%, lo cual no dice nada
+
+Donde cae el punto, depende del umbral que setee para saber si pertenece a una clase o a otra
+
+
+
+
+
+    
