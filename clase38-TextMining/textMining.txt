@@ -1,0 +1,23 @@
+
+
+Deteccion de topicos
+
+Analisis de Sentimientos
+
+---------
+Stemming corta de forma bruta las palabras para encontrar identicos
+
+*LancasterStammer* es el algoritmo de Stemmins mas nuevo. Usar este
+
+Tokenization obtiene palabras
+
+En castellano esta la libreria SnowballStemmer
+
+---------
+Lematización tiene en cuenta el contexto de la palabra
+
+
+--------
+Sentiment Analisis
+
+ngramas -> conjunto de palabras que aparecen juntas
