@@ -1,0 +1,28 @@
+
+GridSearch
+
+Definir que valor convienen para resolver los problemas (parametros)
+
+Hasta ahora haciamos lineal-> con un vector probaba algo
+
+Una grilla de parametros donde cualquier validacion puede ser mas o menos buena
+
+Ponemos los parametros como dimenciones de una grilla, y se hace cross-validation sobre los puntos de esa grilla
+
+-- Regresion Lineal
+Intenta minimizar el error cuadratico medio
+
+--Ridge, Lasso, Elastic Net
+Reducir overfitting
+
+--Kneares
+Distancia con los vecinos y clase
+
+--Regresion Logistica
+Probabilidad de pertenecer a una clase
+
+-- GridSearch
+Busca parametros exhaustivamente
+
+--RandomSearch
+Busca parametros aleatoriamente

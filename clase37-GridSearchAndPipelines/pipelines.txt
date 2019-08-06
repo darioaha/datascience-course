@@ -1,0 +1,20 @@
+
+
+Pipelines
+
+Los pipelines van a ser una serie de clases (hijas) que van a ir transformando la informacion o tomando decisiones.
+Implica un mayor trabajo debido a que requiere automatizar todo el proceso, inclusive las decisiones de cortes de tendencia que se toman a partir de gráficos.
+
+Clase base -> clase hija
+
+las clases base son:
+    BaseEstimator
+    TransformerMixin
+    ClassifierMixin
+    RegressorMixin
+    
+
+CrossValidation
+
+LeaveOneOut
+    Saca todo el conjunto original y valida con un solo elemento

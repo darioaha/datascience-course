@@ -1,0 +1,70 @@
+
+Se intenta que existan una cantidad de feature equilibradas (ni mas nimenos)
+    Ver reduccion de dimensionalidad por ejemplo PCA
+
+En el caso de 2 clases en un target: se debe intentar que la catnidad de casos para cada una esste balanceado
+
+Undersampling es una tecnica utilizada para equilibrar la cantidad de casos
+
+Equilibrar utilizando factores de penalizacion
+POr ejemplo:
+    SVM
+    Regresion Logistica
+    
+SVM - Support Vector Machine:
+    Tenemos unmonton de puntos y lo vamos a separar en un hiperplano
+    Se dividin con un modelo donde se intenta empujar la frontera mas distante entre los puntos de dos clases
+
+--------------
+Si no tengo una cantidad de registros razonables, puedo
+
+- Inventar nuevas variables
+- Feature Extraction (Como PCA)
+- Feature Selection (lo que vamos a ver ahora)
+
+-------------------------------------------------------------------------
+!!!!!! Tipos de variables que se usan un monton: variables de tendencia
+    Por ejemplo el promedio de algo en los ultimos 3 meses, ultimos 6, ultimos 9, etc
+-------------------------------------------------------------------------
+
+Para empezar luego a quitar estas variables que creamos:
+
+------------------
+FEATURE SELECTION
+------------------
+
+- Filter Methods
+    - Ver si esta correlacionada con la variable target
+    No es condicion suficiente para eliminar una variable!!
+    - Mutual ->pero se usa la anterior generalmente
+    
+- Wrapper Methods
+    Entrenar los metodos agregando y quitando features (combinandolas)
+    - Backward selection: SPS
+    
+- Embedded Method
+   Es una combinacion de lo anterior
+   Ejemplo LASSO
+   
+------------------
+ALGORITMO GENETICO
+------------------
+    
+Desde dos padres iniciales (modelos relativamente buenos)
+Se generan hijos a partir  de combinaciones de los padres.
+
+------------------------------------
+Como probar hiperparametros
+------------------------------------
+
+GridSearchCV
+    La idea es utilizar una funcion estimadora (modelo)
+        Se busca un hiperplano que maximice la distancia entre dos vectores
+        
+    
+    
+        
+
+
+    
+    
