@@ -1,0 +1,30 @@
+LSA - LDA - NMF
+
+
+
+Tenemos un listado de textos en lasz filas y temas en las columnas
+
+            Tema1 Tema2 ... TemaN
+Texto1
+Texto2
+Texto3
+...
+TextoM
+
+
+M = U      E      V*
+    mxm   mxn    nxn
+
+--------    
+LSA
+Cluster de palabras con temas
+Me sirve para generar clustering de textos de manera de poder generar clases en textos distintos
+
+Valores Singulares: raiz cuadrada de los autovalores de la matriz
+CxC^t
+Dejamos los autovectores mas grandes que son las palabras que tienen mas informacion.
+
+
+
+TF y DF son buenas medidas de palabras que identificanun tema
+
