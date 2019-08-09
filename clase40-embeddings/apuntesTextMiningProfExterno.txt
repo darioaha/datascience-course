@@ -1,0 +1,112 @@
+
+
+------------ Embeddings ----------------
+
+------------
+----LSA-----
+------------
+Algoritmo que permite asociar palabras entre si cuando aparecen cercans en un corpus de texto
+
+Corpus de texto -> Ejemplo: ultimos 3 años de seccion politica de clarin
+
+Armo una matriz de palabras y documentos
+
+        Doc1 Doc2 ... Docn
+Pal1     5    4
+Pal2     4    2
+...
+Paln     1    12
+(Bag of words)
+
+Matriz con las ocurrencias de cada palabra en los documentos
+
+Problemas de este modelo:
+- Policemia es el principal problema de la policemia. Dos palabras que se escriben igual. Ej: banco,boleta
+- La matriz va a contener muchos ceros
+- La dimensionalidad de n (cantidad de columnas) es muy grande
+        300 dimensiones es un numero aproximadamente el numero de dimensiones que se trabaja
+
+TF-IDF se hace antes de bajar la dimensionalidad para quedarme con las palabras que mas informacion tienen
+
+
+---------------------
+----Red Neuronal-----
+---------------------
+Cada neurona esta diseñada para responder de una manera.
+    Tienen "hardcodeada" una cuenta matematica.
+
+Capas
+    -Input
+        Todos los datos de entrada
+    -Hidden
+        
+    -Output
+        Lo que la red neuronal devuelve
+
+Entrenar una red neuronal, significa asignarles un peso a los input
+
+                ---------------------
+                YouTube = 3BLUE1BROWN
+                ---------------------
+
+Reconocimiento de imagenes
+Capa de entrada -> cada neurona por un pixel (input) y contiene de 0 a 255 la intensidad de una letra
+Hidden -> contiene funciones sigmoideas
+Output -> cada neurona sabe a que prestarle atencion de todos los hidden.
+
+Entrenamiento, se hace utilizando backpropagation
+
+Funcion de perdida
+    Cuando le decimos a la red cual es el error que tiene
+    Error cuadratico es un ejemplo de funcion de perdida
+
+
+-----------------
+----Word2Vec-----
+-----------------
+
+Es una red neuronal que rreemplaza LSA
+Es una red neuronal bastante sencilla
+Tiene 3 capas: entrada, salida e intermedia
+
+Lo que vamos a hacer con Word2Vec es entrenar los "pixeles" del vocabulario
+    (Cada palabra es un pixel [en comparacion al ejemplo anterior])
+
+Palabra Target y contexto
+    
+Se entrena la red para que la capa oculta sea el embedding.
+Para cada palabra me queda un vector de 300 dimensiones (300 en analogia al caso de LSA)
+Un parametro que tengo que optimizar cuando trabajo con word2vec es indicar cuantas palabras del contexto se toman alrededor de mi palabra target (cuantas a la izquierda y cuantas a la derecha)
+
+    'The argentina "choripan" consist' choripan consiste en las palabras que lo rodean.
+
+-------------------
+Visualizacion T-sne -> se utiliza para ver relaciones entre las palabras
+-------------------
+
+Word2Vec es del 2007. Luego aparecen mas herramientas similares:
+-------------
+    FastText -> mejora en que en lugar de alimentar con una sola palabra, alimentan con bigramas
+-------------   entonces aprende relaciones un pocomas complejas.
+                Ademas otra mejora, es que lo puedo entrenar con bigramas o trigramas de 3 caracteres
+                Con esto se pueden encontrar palabras que no existen en el vocabulario. 
+                    ejemplo: mesa, sillita. puedo encontrar mesita como una mezcla entre mesa y sillita
+                        relaciones sublexicales
+
+2018 - revolucion en el procesamiento de lenguaje natural
+-------------
+        LSTM -> Es un tipo de red neuronal recurrente (RNN)
+-------------   Tiene en cuenta el orden de aparicion de las palabras, no como LSA y FastText
+                Requieren mucho procesamiento para entrenarse, ya que cada neurona adentro tienne muchos pesos para entrenar y muchas conexiones
+                A partir de esto surgieron tmb los transformers
+                Dentro de los transformers surge BERT y ELMO
+
+
+
+
+
+
+
+
+
+
