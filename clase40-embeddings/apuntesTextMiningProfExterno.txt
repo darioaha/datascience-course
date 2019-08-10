@@ -102,7 +102,14 @@ Word2Vec es del 2007. Luego aparecen mas herramientas similares:
                 Dentro de los transformers surge BERT y ELMO
 
 
-
+PyLibrary
+    - Gensim
+        Tiene LSA, Word2Vec
+    - FastText
+        Se pueden descargar directamente los modelos entrenados
+        Se puede utilizar como red neuronal para clasificar textos (ejemplo tweets como agresivos o no agresivos)
+        
+    -
 
 
 
