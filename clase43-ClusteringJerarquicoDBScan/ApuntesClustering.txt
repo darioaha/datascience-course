@@ -1,0 +1,37 @@
+
+
+Clustering
+    Clustering se utiliza cuando no conozco las categorias o agrupamientos que tengo entre mis datos
+    El cluster se toma como algo exploratorio, se utiliza para buscar similitudes. Debe ser interpretable
+    
+Metodo K-means
+Se agrupa con k-means
+Por medio de distancia entre los centroides y los vecinos
+k-means se utiliza por default porque es mas facil de entender y es eficiente
+En k-means hacemos cross-validation  o utilizamos una tecnica para determinar cual es el k que vamos a utilizar
+Los datos deben estar distribuidos de forma convexa-> "una especie de nube"
+
+
+DBScan
+Es otro metodo para clustering
+Se utiliza densidad de distancia
+
+Tipos de puntos
+-Punto de riudo (Noise Point)
+    Cuando no hay ningun core cercano
+-Punto core (Core Point)
+    Si me paro en un punto y encuentro 3 puntos cercanos me encuentro en un punto core
+-Punto borde (Border Point)
+    Se encuentra entre dos core
+    
+Dos parametros:
+    - epsilon: maxima distancia entre dos puntos para considerarse dentro del cluster
+    - min_points: minima cantidad de puntos para ser core
+    
+
+------------------------------------------------------------------------
+Notebook
+
+Siempre que hay distancias dando vueltas hay que escalar (Normalizar=Escalar=Estandarizar)
+
+------------------------------------------------------------------------
