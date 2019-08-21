@@ -1,0 +1,116 @@
+
+
+--------SISTEMAS DE RECOMENDACION--------
+
+Pytorch
+    Natural  language proccessing
+    
+Sistemas de recomendacion basados en modelos y en memoria
+
+Model-Based
+Memory-Based
+
+Problema objetivo:
+    Acercar un producto que le puede interesar al usuario
+    Hay dos tipos: 
+        - personalizadas
+        - no personalizadas
+        
+Dos formas de rankear:
+    - Explicito:
+        El problema del rating explicito tiene un problema, que las personas suelen contestar lo que creen que deben responder, en lugar de lo que creen o les gusta.
+    - Implicito
+        Por ejemplo cuanto tiempo escucha una persona una cancion o cuanto tiempo ve una pelicula.
+        Metrica para medir el interes del usuario sin preguntarle directamente
+        
+--- Pasos para armar un sistema de recomendacion ---
+1- Datos
+    Interaccion de los datos con los items
+2- Modelo de recomendacion
+    Seleccion del algoritmo, tunning de hiperparametros, features engineering
+3- Post-Procesamiento
+    Coherencia de lo que se esta recomendando
+4- Modulo Online
+    Disponibilizar el sistema
+5- User Interface
+    Como va a interactuar con el sitio y pagina web
+    
+Clasificacion de los Sistemas de Recomendacion
+- Basados en popularidad
+- Filtrado colaborativo
+    Recomiendo en funcion a gente parecida o comportamientos similares
+- Filtro Basado en Contenido
+    Basado en el contenido que uni ve
+- Hibridos
+    Mezcla entre filtrado colaborativo y contenido
+    Son redes neuronales.
+    
+
+--- Filtrado Colaborativo ---
+
+Caracteristicas que no son directamente de los items, algo que no esta expllicito pero que varios clientes en comun consumen lo mismo
+
+Dos grupos
+- Basados en memoria
+    
+    - User-Item
+        Miro la relacion entre los usuarios y los items. "A los usuarios similares a vos les gusto esto"
+    
+    - Item-Item
+        Buscar los usuarios a los cuales les gusto algo, recomendar lo que les gusto
+        
+Similitud coseno
+    Tomo cada usuario cmo si fuera un vector de n dimensiones (n=cantidad de variables)
+    Cada usuario es un vector
+    La similitud viene dada por el coseno del angulo entre los vectores.
+    
+    
+-- Procedimiento User Item
+    Lo que importa no es tanto el calor absoluto del score, sino el orden
+    Siempre voy a tomar los top N
+    
+    
+- Procedimiento Item Item
+    Lo primero que hago es transponer
+    Dos items son parecidos por que los usuarios les dan valores parecidos
+    
+    
+------------------NOTEBOOK
+
+from sklearn.metrics.pairwise import cosine_similarity
+pairwise lo que hace es tomar de a pared
+
+Lo que hace la funcion for que esta en Matriz de similaridad (similitud) es tomar pares para calcular el coseno entre usuarios
+
+-------------------
+Parte II
+-------------------
+
+------ SVD - Singular Value Descomposition ------
+
+Tengo una matriz llena de nulos y la quiero llenar
+    Matrix factorization
+    SVD arma dos matrices una para usuarios y otras para items
+    Tengo un bias general un bias para item un bias para el usuario y dos matrices una para el usuario y otra para el item
+    Esto lo entrenamos por medio de Sensor Gradiente
+    Utilizamos Regularizacion Ridge
+    
+    
+Problema del arranque en frio (cold start)
+    El problema de que si hay usuarios que no generan puntajes es muy dificil hacerle recomendaciones
+    - Recomendaciones basadas en contenido
+        La idea es basarme en las caracteristicas del item
+    - Sugenerncia basado en la popularidad de los items
+        Recomiendo directamente los items mas populares
+    - Basarse en informacion de contexto
+        Por ejemplo desde donde se conecta, genero, edad
+        
+        
+
+    
+
+
+
+
+
+    
