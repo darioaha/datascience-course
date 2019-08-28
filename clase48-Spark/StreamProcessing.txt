@@ -1,0 +1,17 @@
+
+-- Stream Processing--
+
+Tiene que ver con el Procesamiento Continuo de Datos
+
+- Procesamiento batch -> datasets finitos
+- Procesamiento stream -> datasets infinitos
+
+Se filtran eventos y se joinenan con evento similares
+
+Windowing
+    Generar ventanas para agrupar los datos
+    
+    Fixed -> 
+    Sliding -> ventanas mas amplias
+    Sessions -> 
+

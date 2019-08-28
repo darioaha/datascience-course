@@ -1,0 +1,13 @@
+
+docker network create py_net
+
+docker run -d --name postgres_g3 --network=py_net -p 54320:5432 postgres:9.6
+
+docker exec -it postgres_g3 bash -c 'createdb -U postgres db_g3'
+
+docker exec -u postgres postgres_g3 psql 'dbname=db_g3 options=--search_path=db_g3' postgres -p 5432 -a -q -f g3_unc_anonimo_negocio.sql
+
+
+    
+docker run -d --name py_ds_dev --network=py_net gitlab.siu.edu.ar:5005/dalonso/ds:develop
+docker run -d --name py_ds_dev --network=py_net -p 8282:80 ecoron/python36-sklearn:latest
