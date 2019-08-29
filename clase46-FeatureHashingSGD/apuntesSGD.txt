@@ -1,0 +1,21 @@
+
+
+--- Descenso de gradientes estocasticos ---
+
+SGDClassifier
+SGDRegressor
+
+from sklearn.linear_model import SGDClassifier
+
+Se aplica regularizacion dentreo de SGD
+Si alfa es grande en la penalizacion, beta sera mas chico
+
+Beta0 y Beta1 se pueden mover dentro del rombo (lasso)
+    Si el vertice queda por afuera
+    Lasso suele generar soluciones cerca de los vertices es decir cercanas a 0 en alguna en Beta0 o Beta1
+    Ridge es dificil que caiga en un solo punto
+    En ElasticNet se busca un intermedio entre ambos
+    
+
+ ley de Zipf
+     Siempre los datasets caen en un pequeño grupo
