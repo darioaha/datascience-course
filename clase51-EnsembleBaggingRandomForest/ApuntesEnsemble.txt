@@ -1,0 +1,51 @@
+
+-- Ensamble --
+
+La idea de los ensambles es que tenga muchos modelos simples
+Los ensambles se basan en promedios
+    - Baggin
+    - Boosting
+
+Cuando voy a ensamblar mi hipotesis es:
+    - Lograr mayor exactitud
+
+Soluciono problemas computacionales
+Ejemplo:
+    Arbol de decision:  soluciona la mejor solucion por cada paso
+
+
+- Bagging
+Sampleo con reposicion
+Cada conjunto entrena un clasificador diferente
+    RandomForest
+
+Si usamos un clasificador que es estable, el bagging puede no ser efectivo
+
+Meta estimador Bagging
+- Cuantas variables podemos utilizar
+
+
+-- Random Forest --
+Lo arboles son bastante sencillos, pero casi siempre sobreajustan
+Para que no haya overfitting se usan ensambles de arboles.
+El overfitting lo obtengo mediante el test
+
+RandomForest no unicamente hace un baggin de datos tambien hace baggin de variables
+Va agarrando subconjuntos de variables y datos para probar.
+
+"El sesgo y la varianza estan en el mejor mundo, ya que baja un poco el sesgo y la varianza"
+
+Una variable poco explicativa que tiene poca varianza, es decir que caen muchas clases en ella.
+
+
+-- ExtraTrees --
+Le agrega un grado mas de aleatoriedad a los arboles
+Nosotros creamos los arboles maximizando la medida de gini, estos es un random entre los cortes
+
+Hace sampleo, seleccion random de features y un random entre cortes.
+
+
+
+
+
+
