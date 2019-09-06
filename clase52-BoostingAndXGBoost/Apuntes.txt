@@ -1,0 +1,55 @@
+NO HAY NINGUN ALGORITMO QUE GENERE CLASES DESBALANCEADAS
+
+-- Tipos de Boosting --
+
+AdaBoost
+GradientBoosting
+- XGBoost
+- LightGBM
+
+-- Adaboost
+
+La idea es pesar cada una de las instancias del modelo
+Esto huele a overfit :)
+    No va a tener overfit porque lo va a resolver con muchos modelos simples
+    Por ejemplo construyendo arboles de decision con cada variable
+    
+Error Total: La suma de los pesos de los casos incorrectamente clasificados
+Se calcula la significancia para el arbol
+Le da mas pesos a los casos que estan erroneamente clasificados
+----> Se normalizan los pesos
+--> Y asi queda el set de entrenamiento para mi proximo paso en la secuencia
+
+-- Gradient Boosting
+
+Funcion y parametros que minimicen la perdida
+Ejemplo: Dentro de todos los arboles cuales son los que minimizan la perdida
+    En lugar de hacer gradiente con las instancias, hace la derivada de la perdida respecto al error de clasificacion
+    
+En lugar de estimar lo que ya se, trata de estimar en cuanto me equivoco
+No se a quien se le ocurrio esto pero funciona muy bien
+
+- XGBoost (2015)
+    Se utiliza por velocidad - (LightGBM tarda mucho mas)
+    Utiliza:
+        1- GradientBoosting
+        2- GradientBoosting estocastico
+        3- Gradient boosting con regularizacion
+
+Uno de los problemas costosos es como estimar el punto en el que se divide cada nodo
+El overfitting lo medimos, midiendo entrenamiento contra testing
+
+
+- LightGBM
+
+
+Estos algoritmos hacen descenso de gradientes para calcular todo, por lo cual son aleatorios
+
+
+
+learning_rate
+    Conviene que sea un valor pequeño
+    Ejemplo: 0,00001
+    
+
+    
