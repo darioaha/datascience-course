@@ -1,0 +1,54 @@
+En deep learning se usan mucho las derivadas, porque dada un funcion se busca su pendiente para hallar minimos.
+
+reshape-> achatar matriz
+
+a=np.array([1,2,3],[4,5,6])
+a.shape
+(3,2)
+
+a=a.reshape(6,1)
+
+redimensiona la matriz
+
+normalizar
+	llevar todos los numeros a en a 0,1-1
+	np.linage
+
+Broadcasting
+	normalizar la salida para que sume 1
+	en lugar de 0 y 1, va a tener un valor entre 0 y 9 que va a sumar 1
+	
+Funcion de perdida
+	tenemos la x, la vamos a pasar por el modelo y vamos a obtener una y sombrero que seria la prediccion del modelo
+	la vamos a comparar con la Y original y vamos a obtener el error
+
+
+Regresion logistica como red neuronal
+
+Back propagation
+
+---------------------------------------------
+Keras funciona sobre tensorflow
+
+maneja tensores por tensorflow
+
+h,w,c = height, width, channel
+
+vector->
+matriz->
+tensor->
+
+--dimension teras--
+batch_size
+height
+width
+channel-> cantidad de colores
+
+lo primero que debemos hacer con una imagen
+1- normalizar
+2- reshapear
+
+Los modelos sequenciales en keras son un stack de capas.
+Se utilizan capas densas: todas las neuronas conectadas con todas
+
+

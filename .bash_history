@@ -23,3 +23,6 @@ conda install df_pca
 exit
 =======
 >>>>>>> a50fb6dbe3bb5d1e29c712e6f00606c6af8270b1
+conda install -c conda-forge tensorflow
+<<<<<<< HEAD
+conda install -c conda-forge keras

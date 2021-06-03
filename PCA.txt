@@ -1,0 +1,22 @@
+
+
+PCA
+
+¿Que perdida de informacion es tolerable en PCA?
+	Esto para saber cuantas componentes es aceptable tirar
+
+Al realizar PCA ¿Es necesario si o si quedarme solamente con un problema de 3 dimensiones?
+
+Es logico hacer PCA con 2 componentes, luego elegir otras dos componentes y ver como se comportan graficamente?
+
+Al generar clusters -> ver teoria de la dualidad
+	La idea seria ver que sucede en termino de las variables y no de los individuos
+	Agarrar la tabla original y transponerla y aplicarle PCA
+	Nuestras variables pasarian a ser nuestros individuos
+	Las variables se representan en el circulo de correlaciones 
+		(Relacion entre las variables por el angulo)
+	Cuando el angulo entre dos variables es chica, quiere decir que se comportan de forma parecida (fuerte)
+	Cuando los angulos son mas grandes (90% aprox) se dice que no hay correlacion entre variables
+	Correlacion fuerte pero inversa, angulos cercanos a 180%, una aumenta y la otra disminuye
+
+Es factible hacer esto ultimo con 80 mil datos de individuos?
