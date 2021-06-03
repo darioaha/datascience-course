@@ -1,0 +1,26 @@
+
+
+Feature Importance
+
+Arbol:
+    Calcula una medida que es gini
+        Lo que hace es calcular la importancia de un nodo (cuenta de gini para un nodo)
+        
+    Ganancia: (Es) Cuanto es gini para un nodo
+        Suma todos los nodos para calcular la importancia de una variable
+        
+Random Forest
+    La ganancia en cada arbol de la variable, promediada en todos los arboles
+    
+
+En practica 0
+    ganancia_gini_persons_2    = 1.000 * 0.4573 - 0.667 * 0.5792 - 0.333 * 0.0000
+    ganancia_gini_safety_low   = 0.666 * 0.5792 - 0.444 * 0.6288 - 0.222 * 0.0000
+    ganancia_gini_buying_vhigh = 0.444 * 0.6288 - 0.333 * 0.6286 - 0.111 * 0.4688
+    
+    La ganancia del nodo safety_low es es igual a su valor por gini menos el spliteo de su variable
+    
+    
+Graficar importancia y sus desvios
+    En la practica 1 estan la importancia y sus desvios
+    

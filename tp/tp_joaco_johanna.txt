@@ -1,0 +1,24 @@
+Deteccion de topicos
+
+limpiar
+- tokenize
+- stopwords
+
+nlkt freqdist
+
+word cloud
+https://github.com/amueller/word_cloud
+
+--LSA--
+similitudo coseno + kmeans (k=n)
+
+--NMF--
+Probabilistico
+
+--LDA--
+gensin-trigramas
+Countvectorizer
+
+--Sentimental Analysis con Sklear--
+
+

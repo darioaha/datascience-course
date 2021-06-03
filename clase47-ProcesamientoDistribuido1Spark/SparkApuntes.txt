@@ -1,0 +1,60 @@
+
+
+---- Apache Spark ----
+
+- Es similar a Hadoop
+
+Base de datos optimizadas para consultas de muchas filas y pocas columnas
+Surgen bases de datos OLAP (dentro de ellas los datawarehouse)
+
+
+-- Cluster
+    Cluster Hadoop:
+        Hadoop es un sistema operativo que permite armar clusters
+        Un cluster de hadoop es un datalake
+        
+Data Lake
+    Armar las tablas, vistas, etc
+    Es un lugar donde puedo dumpear cualquier base de datos, distribuir el procesamiento, etc
+    Archivos dentro de un cluster de hadoop
+    
+
+Apache Spark
+    Sistema de procesamiento de datos a gran escala
+    Librerias
+        Python, Scala, Java y R
+        
+Procesamiento
+    Batch
+    Interactivo
+    Continuo
+    Iterativo
+    
+Componentes
+    Spark SQl Structured Data
+    Spark Streaming
+    MLib -> librerias de machine learning
+    GraphX -> librerias de mas alto nivel
+    
+    Sistemas de clusters
+        Yarn -> hadoop
+        Mesos
+    Spark Core
+    
+Ejecucion de Apache Spark
+    Executor: son cada uno de los executor que se le asignan a una tarea
+    Driver: interactua con los executor
+    
+    
+RDD: REsilient Distributed Dataset
+    Es una coleccion que se particiona y se puede procesar de forma distribuida cada particion
+    
+    Internamente lo que hace es poner una task por cada particion
+        Es decir que puede correr una task por cada procesador
+        
+----
+Databricks
+    
+        
+    
+    

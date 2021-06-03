@@ -1,0 +1,114 @@
+
+
+--Arboles
+
+--------------------------
+-- Arboles de Regresion -- 
+--------------------------
+Ejemplo de problematica: Cuanto va a ganar un futbolista en base a goles
+
+Es una tecnica nueva que utliza:
+Regresiones, para estimar un valor
+Clasificacion, para ddevolver una estimacion de una etiqueta
+
+Los arboles utilizan ambas tecnicas
+
+Cada nodo va a plantear una condicion.
+Clasicamente los arboles son binarios, pero pueden tener mas.
+
+La performance de este modelo en general no son buenas, lo que se hacen son ensambles de arboles que performan mejor
+Un arbol con muchas hojas puede tener overfitting
+
+Caracteristicas
+- No parametrica: (otra cosa que vimos no parametrica es la regresion lineal)
+- Jerarquica: Los mejores nodos estan mas arriba
+
+
+Nodos terminales y hojas son sinonimos
+Nodo raiz
+Nodo interno
+
+1- Tengo que encontrar regiones que no tengan overfitting y que sean similares
+
+Para cada region voy a tener un y estimado de todos los nodos que cayeron en esa region
+La diferencia entre cada valor de esa caja con el promedio de esa caja
+Esto me dara una idea de como esta de bien en cada region, la media resultaria representativa de los puntos de la region
+    Al menos el error no deberia ser tan alto
+
+Lo que se hace es algo recursivo y binario para dividir el problema
+
+Como?
+    - Recursivo
+    - Greedy (Voraz)
+    - Optimo Local
+    
+Como construir regiones?
+    RSS: se resta la instancia menos la media para evaluar el punto
+    Para cada split binario lo que se busca es reducir el RSS
+    El numero para decidir el split es el parametro s de la funcion
+        En el caso de que mi variable en el nodo sea categoria va a dividir por la categoria mas dada y por el otro lado el restante
+        
+
+Estos algoritmos finalizan con un corte o cuando cumplen la cantidad de iteraciones que les indicamos.
+
+
+------------------------------
+-- Arboles de Clasificacion -- 
+------------------------------
+Ejemplo: Desercion de Clientes
+
+Es mas intuitivo
+En vez de predecir un valor, se predice una etiqueta
+El valor predicho por cada nodo es la etiqueta mayoritaria
+
+Se define una tasa de error que indica cuanto se equivocco
+
+p proporcion
+k son todas las etiquetas que me cayeron en un nodo terminal
+el nodo terminal va a tener la etiqueta del que mas tiene etiquetado
+
+E=1-max_k(p_mk)
+
+Si tengo un nodo con 3 etiquetas
+A: 0.10 k=1
+B: 0.15 k=2
+C: 0.75 k=3
+
+Al nodo lo nombro con etiqueta "C" y dejo afuera todo lo que no es C
+e = 0,25
+
+
+Indice de Gini:
+G=SUM p_mk(1- p_mk)
+"Mas chico es mejor" ;)
+Si el indice Gini empeora
+
+--Funciones de optimizacion--
+Si escribo un nodo, y el indice de Gini es mejor en otro, me quedo con ese otro
+
+Ganancia:
+
+N: Cuantas instancias cayeron en el nodo padre
+I: Medida de entropia seleccionada (La mas usada: Indice Gini)
+
+(Ver calculo de ganancia en diapositivo)
+
+
+Podando arboles
+(No se usa mucho podar)
+Lo que vimos hasta ahora tiene el problema del overfitting
+Como tratar overfitting? Podando
+Podar es basicamente como hacer Lasso -> Lo que hace es penalizar y va a eliminar nodos
+
+Pre-Poda
+    Para no podar:
+        definir bien
+
+
+
+
+
+
+
+
+
